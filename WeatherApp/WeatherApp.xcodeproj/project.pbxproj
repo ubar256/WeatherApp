@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		45C943EA2608EC12008BB125 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C943E92608EC12008BB125 /* AppDelegate.swift */; };
-		45C943EC2608EC12008BB125 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C943EB2608EC12008BB125 /* SceneDelegate.swift */; };
 		45C943EE2608EC12008BB125 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C943ED2608EC12008BB125 /* ViewController.swift */; };
 		45C943F12608EC12008BB125 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45C943EF2608EC12008BB125 /* Main.storyboard */; };
 		45C943F32608EC13008BB125 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45C943F22608EC13008BB125 /* Assets.xcassets */; };
@@ -24,7 +23,6 @@
 /* Begin PBXFileReference section */
 		45C943E62608EC12008BB125 /* WeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45C943E92608EC12008BB125 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		45C943EB2608EC12008BB125 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		45C943ED2608EC12008BB125 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		45C943F02608EC12008BB125 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		45C943F22608EC13008BB125 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -70,7 +68,6 @@
 			children = (
 				45C943FE2608F9B0008BB125 /* Scenes */,
 				45C943E92608EC12008BB125 /* AppDelegate.swift */,
-				45C943EB2608EC12008BB125 /* SceneDelegate.swift */,
 				45C943ED2608EC12008BB125 /* ViewController.swift */,
 				45C943EF2608EC12008BB125 /* Main.storyboard */,
 				45C943F22608EC13008BB125 /* Assets.xcassets */,
@@ -177,7 +174,6 @@
 				45C9441A2609F7CE008BB125 /* WeatherDailyPresenter.swift in Sources */,
 				45C9441C2609F7CE008BB125 /* WeatherDailyRouter.swift in Sources */,
 				45C943EA2608EC12008BB125 /* AppDelegate.swift in Sources */,
-				45C943EC2608EC12008BB125 /* SceneDelegate.swift in Sources */,
 				45C9441D2609F7CE008BB125 /* WeatherDailyModels.swift in Sources */,
 				45C9441F2609F7CE008BB125 /* WeatherDailyInteractor.swift in Sources */,
 			);

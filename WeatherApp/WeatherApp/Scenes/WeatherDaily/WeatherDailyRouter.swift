@@ -1,13 +1,10 @@
-
 import UIKit
 
-@objc protocol WeatherDailyRoutingLogic
-{
+@objc protocol WeatherDailyRoutingLogic {
   //func routeToSomewhere(segue: UIStoryboardSegue?)
 }
 
-protocol WeatherDailyDataPassing
-{
+protocol WeatherDailyDataPassing {
   var dataStore: WeatherDailyDataStore? { get }
 }
 
@@ -15,7 +12,7 @@ class WeatherDailyRouter: NSObject, WeatherDailyRoutingLogic, WeatherDailyDataPa
   weak var viewController: WeatherDailyViewController?
   var dataStore: WeatherDailyDataStore?
   
-  // MARK: Routing
+  // MARK: -Routing
   
   //func routeToSomewhere(segue: UIStoryboardSegue?) {
   //  if let segue = segue {
@@ -31,14 +28,12 @@ class WeatherDailyRouter: NSObject, WeatherDailyRoutingLogic, WeatherDailyDataPa
   //  }
   //}
 
-  // MARK: Navigation
-  
+  // MARK: -Navigation
   //func navigateToSomewhere(source: WeatherDailyViewController, destination: SomewhereViewController) {
   //  source.show(destination, sender: nil)
   //}
   
-  // MARK: Passing data
-  
+  // MARK: -Passing data
   //func passDataToSomewhere(source: WeatherDailyDataStore, destination: inout SomewhereDataStore) {
   //  destination.name = source.name
   //}

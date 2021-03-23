@@ -1,7 +1,6 @@
-
 import UIKit
 
-class WeatherDailyWorker {
-  func doSomeWork() {
-  }
-}
+ class WeatherDailyWorker {
+   func doSomeWork() {
+   }
+ }

@@ -1,4 +1,3 @@
-
 import UIKit
 
 protocol WeatherDailyPresentationLogic {
@@ -8,8 +7,7 @@ protocol WeatherDailyPresentationLogic {
 class WeatherDailyPresenter: WeatherDailyPresentationLogic {
   weak var viewController: WeatherDailyDisplayLogic?
   
-  // MARK: Do something
-  
+  // MARK: -Do something
   func presentSomething(response: WeatherDaily.Something.Response) {
     let viewModel = WeatherDaily.Something.ViewModel()
     viewController?.displaySomething(viewModel: viewModel)

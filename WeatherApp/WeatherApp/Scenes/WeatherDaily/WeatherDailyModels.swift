@@ -1,9 +1,8 @@
-
 import UIKit
 
 enum WeatherDaily {
-  // MARK: Use cases
-  
+    
+  // MARK: -Use cases
   enum Something {
     struct Request {
     }

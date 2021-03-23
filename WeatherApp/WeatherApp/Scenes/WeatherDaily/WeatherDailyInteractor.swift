@@ -1,4 +1,3 @@
-
 import UIKit
 
 protocol WeatherDailyBusinessLogic {
@@ -14,8 +13,7 @@ class WeatherDailyInteractor: WeatherDailyBusinessLogic, WeatherDailyDataStore {
   var worker: WeatherDailyWorker?
   //var name: String = ""
   
-  // MARK: Do something
-  
+  // MARK: -Do something
   func doSomething(request: WeatherDaily.Something.Request) {
     worker = WeatherDailyWorker()
     worker?.doSomeWork()
