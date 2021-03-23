@@ -29,12 +29,16 @@ class WeatherDailyRouter: NSObject, WeatherDailyRoutingLogic, WeatherDailyDataPa
   //}
 
   // MARK: -Navigation
-  //func navigateToSomewhere(source: WeatherDailyViewController, destination: SomewhereViewController) {
+  //func navigateToSomewhere(
+  //  source: WeatherDailyViewController,
+  //  destination: SomewhereViewController) {
   //  source.show(destination, sender: nil)
   //}
   
   // MARK: -Passing data
-  //func passDataToSomewhere(source: WeatherDailyDataStore, destination: inout SomewhereDataStore) {
+  //func passDataToSomewhere(
+  //  source: WeatherDailyDataStore,
+  //  destination: inout SomewhereDataStore) {
   //  destination.name = source.name
   //}
 }
