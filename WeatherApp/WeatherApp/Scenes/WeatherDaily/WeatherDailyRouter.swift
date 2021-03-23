@@ -1,25 +1,23 @@
 
 import UIKit
 
-@objc protocol CreateOrderRoutingLogic
+@objc protocol WeatherDailyRoutingLogic
 {
   //func routeToSomewhere(segue: UIStoryboardSegue?)
 }
 
-protocol CreateOrderDataPassing
+protocol WeatherDailyDataPassing
 {
-  var dataStore: CreateOrderDataStore? { get }
+  var dataStore: WeatherDailyDataStore? { get }
 }
 
-class CreateOrderRouter: NSObject, CreateOrderRoutingLogic, CreateOrderDataPassing
-{
-  weak var viewController: CreateOrderViewController?
-  var dataStore: CreateOrderDataStore?
+class WeatherDailyRouter: NSObject, WeatherDailyRoutingLogic, WeatherDailyDataPassing {
+  weak var viewController: WeatherDailyViewController?
+  var dataStore: WeatherDailyDataStore?
   
   // MARK: Routing
   
-  //func routeToSomewhere(segue: UIStoryboardSegue?)
-  //{
+  //func routeToSomewhere(segue: UIStoryboardSegue?) {
   //  if let segue = segue {
   //    let destinationVC = segue.destination as! SomewhereViewController
   //    var destinationDS = destinationVC.router!.dataStore!
@@ -35,15 +33,13 @@ class CreateOrderRouter: NSObject, CreateOrderRoutingLogic, CreateOrderDataPassi
 
   // MARK: Navigation
   
-  //func navigateToSomewhere(source: CreateOrderViewController, destination: SomewhereViewController)
-  //{
+  //func navigateToSomewhere(source: WeatherDailyViewController, destination: SomewhereViewController) {
   //  source.show(destination, sender: nil)
   //}
   
   // MARK: Passing data
   
-  //func passDataToSomewhere(source: CreateOrderDataStore, destination: inout SomewhereDataStore)
-  //{
+  //func passDataToSomewhere(source: WeatherDailyDataStore, destination: inout SomewhereDataStore) {
   //  destination.name = source.name
   //}
 }

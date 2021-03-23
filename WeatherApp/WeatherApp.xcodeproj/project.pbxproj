@@ -13,12 +13,12 @@
 		45C943F12608EC12008BB125 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45C943EF2608EC12008BB125 /* Main.storyboard */; };
 		45C943F32608EC13008BB125 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45C943F22608EC13008BB125 /* Assets.xcassets */; };
 		45C943F62608EC13008BB125 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45C943F42608EC13008BB125 /* LaunchScreen.storyboard */; };
-		45C944062608FA22008BB125 /* CreateOrderPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C944002608FA22008BB125 /* CreateOrderPresenter.swift */; };
-		45C944072608FA22008BB125 /* CreateOrderWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C944012608FA22008BB125 /* CreateOrderWorker.swift */; };
-		45C944082608FA22008BB125 /* CreateOrderRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C944022608FA22008BB125 /* CreateOrderRouter.swift */; };
-		45C944092608FA22008BB125 /* CreateOrderModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C944032608FA22008BB125 /* CreateOrderModels.swift */; };
-		45C9440A2608FA22008BB125 /* CreateOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C944042608FA22008BB125 /* CreateOrderViewController.swift */; };
-		45C9440B2608FA22008BB125 /* CreateOrderInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C944052608FA22008BB125 /* CreateOrderInteractor.swift */; };
+		45C9441A2609F7CE008BB125 /* WeatherDailyPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C944142609F7CE008BB125 /* WeatherDailyPresenter.swift */; };
+		45C9441B2609F7CE008BB125 /* WeatherDailyWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C944152609F7CE008BB125 /* WeatherDailyWorker.swift */; };
+		45C9441C2609F7CE008BB125 /* WeatherDailyRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C944162609F7CE008BB125 /* WeatherDailyRouter.swift */; };
+		45C9441D2609F7CE008BB125 /* WeatherDailyModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C944172609F7CE008BB125 /* WeatherDailyModels.swift */; };
+		45C9441E2609F7CE008BB125 /* WeatherDailyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C944182609F7CE008BB125 /* WeatherDailyViewController.swift */; };
+		45C9441F2609F7CE008BB125 /* WeatherDailyInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C944192609F7CE008BB125 /* WeatherDailyInteractor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,12 +30,12 @@
 		45C943F22608EC13008BB125 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		45C943F52608EC13008BB125 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		45C943F72608EC13008BB125 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		45C944002608FA22008BB125 /* CreateOrderPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateOrderPresenter.swift; sourceTree = "<group>"; };
-		45C944012608FA22008BB125 /* CreateOrderWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateOrderWorker.swift; sourceTree = "<group>"; };
-		45C944022608FA22008BB125 /* CreateOrderRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateOrderRouter.swift; sourceTree = "<group>"; };
-		45C944032608FA22008BB125 /* CreateOrderModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateOrderModels.swift; sourceTree = "<group>"; };
-		45C944042608FA22008BB125 /* CreateOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateOrderViewController.swift; sourceTree = "<group>"; };
-		45C944052608FA22008BB125 /* CreateOrderInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateOrderInteractor.swift; sourceTree = "<group>"; };
+		45C944142609F7CE008BB125 /* WeatherDailyPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDailyPresenter.swift; sourceTree = "<group>"; };
+		45C944152609F7CE008BB125 /* WeatherDailyWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDailyWorker.swift; sourceTree = "<group>"; };
+		45C944162609F7CE008BB125 /* WeatherDailyRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDailyRouter.swift; sourceTree = "<group>"; };
+		45C944172609F7CE008BB125 /* WeatherDailyModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDailyModels.swift; sourceTree = "<group>"; };
+		45C944182609F7CE008BB125 /* WeatherDailyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDailyViewController.swift; sourceTree = "<group>"; };
+		45C944192609F7CE008BB125 /* WeatherDailyInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDailyInteractor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,22 +83,22 @@
 		45C943FE2608F9B0008BB125 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				45C943FF2608F9C9008BB125 /* CreateOrder */,
+				45C943FF2608F9C9008BB125 /* WeatherDaily */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
 		};
-		45C943FF2608F9C9008BB125 /* CreateOrder */ = {
+		45C943FF2608F9C9008BB125 /* WeatherDaily */ = {
 			isa = PBXGroup;
 			children = (
-				45C944002608FA22008BB125 /* CreateOrderPresenter.swift */,
-				45C944012608FA22008BB125 /* CreateOrderWorker.swift */,
-				45C944022608FA22008BB125 /* CreateOrderRouter.swift */,
-				45C944032608FA22008BB125 /* CreateOrderModels.swift */,
-				45C944042608FA22008BB125 /* CreateOrderViewController.swift */,
-				45C944052608FA22008BB125 /* CreateOrderInteractor.swift */,
+				45C944142609F7CE008BB125 /* WeatherDailyPresenter.swift */,
+				45C944152609F7CE008BB125 /* WeatherDailyWorker.swift */,
+				45C944162609F7CE008BB125 /* WeatherDailyRouter.swift */,
+				45C944172609F7CE008BB125 /* WeatherDailyModels.swift */,
+				45C944182609F7CE008BB125 /* WeatherDailyViewController.swift */,
+				45C944192609F7CE008BB125 /* WeatherDailyInteractor.swift */,
 			);
-			path = CreateOrder;
+			path = WeatherDaily;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -171,15 +171,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45C9441B2609F7CE008BB125 /* WeatherDailyWorker.swift in Sources */,
 				45C943EE2608EC12008BB125 /* ViewController.swift in Sources */,
-				45C9440A2608FA22008BB125 /* CreateOrderViewController.swift in Sources */,
-				45C944062608FA22008BB125 /* CreateOrderPresenter.swift in Sources */,
-				45C944072608FA22008BB125 /* CreateOrderWorker.swift in Sources */,
-				45C944092608FA22008BB125 /* CreateOrderModels.swift in Sources */,
-				45C9440B2608FA22008BB125 /* CreateOrderInteractor.swift in Sources */,
+				45C9441E2609F7CE008BB125 /* WeatherDailyViewController.swift in Sources */,
+				45C9441A2609F7CE008BB125 /* WeatherDailyPresenter.swift in Sources */,
+				45C9441C2609F7CE008BB125 /* WeatherDailyRouter.swift in Sources */,
 				45C943EA2608EC12008BB125 /* AppDelegate.swift in Sources */,
 				45C943EC2608EC12008BB125 /* SceneDelegate.swift in Sources */,
-				45C944082608FA22008BB125 /* CreateOrderRouter.swift in Sources */,
+				45C9441D2609F7CE008BB125 /* WeatherDailyModels.swift in Sources */,
+				45C9441F2609F7CE008BB125 /* WeatherDailyInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

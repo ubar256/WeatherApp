@@ -1,38 +1,33 @@
 
 import UIKit
 
-protocol CreateOrderDisplayLogic: class
-{
-  func displaySomething(viewModel: CreateOrder.Something.ViewModel)
+protocol WeatherDailyDisplayLogic: class {
+  func displaySomething(viewModel: WeatherDaily.Something.ViewModel)
 }
 
-class CreateOrderViewController: UIViewController, CreateOrderDisplayLogic
-{
-  var interactor: CreateOrderBusinessLogic?
-  var router: (NSObjectProtocol & CreateOrderRoutingLogic & CreateOrderDataPassing)?
+class WeatherDailyViewController: UIViewController, WeatherDailyDisplayLogic {
+  var interactor: WeatherDailyBusinessLogic?
+  var router: (NSObjectProtocol & WeatherDailyRoutingLogic & WeatherDailyDataPassing)?
 
   // MARK: Object lifecycle
   
-  override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
-  {
+  override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
     super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     setup()
   }
   
-  required init?(coder aDecoder: NSCoder)
-  {
+  required init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
     setup()
   }
   
   // MARK: Setup
   
-  private func setup()
-  {
+  private func setup() {
     let viewController = self
-    let interactor = CreateOrderInteractor()
-    let presenter = CreateOrderPresenter()
-    let router = CreateOrderRouter()
+    let interactor = WeatherDailyInteractor()
+    let presenter = WeatherDailyPresenter()
+    let router = WeatherDailyRouter()
     viewController.interactor = interactor
     viewController.router = router
     interactor.presenter = presenter
@@ -43,8 +38,7 @@ class CreateOrderViewController: UIViewController, CreateOrderDisplayLogic
   
   // MARK: Routing
   
-  override func prepare(for segue: UIStoryboardSegue, sender: Any?)
-  {
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if let scene = segue.identifier {
       let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
       if let router = router, router.responds(to: selector) {
@@ -55,8 +49,7 @@ class CreateOrderViewController: UIViewController, CreateOrderDisplayLogic
   
   // MARK: View lifecycle
   
-  override func viewDidLoad()
-  {
+  override func viewDidLoad() {
     super.viewDidLoad()
     doSomething()
   }
@@ -65,14 +58,12 @@ class CreateOrderViewController: UIViewController, CreateOrderDisplayLogic
   
   //@IBOutlet weak var nameTextField: UITextField!
   
-  func doSomething()
-  {
-    let request = CreateOrder.Something.Request()
+  func doSomething() {
+    let request = WeatherDaily.Something.Request()
     interactor?.doSomething(request: request)
   }
   
-  func displaySomething(viewModel: CreateOrder.Something.ViewModel)
-  {
+  func displaySomething(viewModel: WeatherDaily.Something.ViewModel) {
     //nameTextField.text = viewModel.name
   }
 }
