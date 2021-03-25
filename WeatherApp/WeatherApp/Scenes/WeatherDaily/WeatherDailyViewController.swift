@@ -36,7 +36,7 @@ import UIKit
     override func viewDidLoad() {
         super.viewDidLoad()
         doSomething()
-      }
+    }
 
       // MARK: -Do something
       //@IBOutlet weak var nameTextField: UITextField!
