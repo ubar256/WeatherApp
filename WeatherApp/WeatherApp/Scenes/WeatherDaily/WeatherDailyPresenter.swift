@@ -10,8 +10,9 @@ class WeatherDailyPresenter: WeatherDailyPresentationLogic {
   
   // MARK: -Do something
   func presentWeather(response: WeatherDaily.FetchWeather.Response) {
-    viewController?.displayWeather(viewModel: WeatherDaily.FetchWeather.ViewModel())
-    print(response.weather)
+    let weatherView = response.weatherResponse
+    viewController?.displayWeather(viewModel: WeatherDaily.FetchWeather.ViewModel(weatherModel: weatherView))
+    print(response.weatherResponse.timezone)
   }
   
   func presentError(_ error: Error) {

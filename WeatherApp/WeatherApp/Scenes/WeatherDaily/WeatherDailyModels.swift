@@ -1,7 +1,6 @@
 import UIKit
 
 enum WeatherDaily {
-    
   // MARK: -Use cases
   enum FetchWeather {
     struct Request {
@@ -9,9 +8,10 @@ enum WeatherDaily {
       let lat: Double
     }
     struct Response {
-      let weather: WeatherCallAPI
+      let weatherResponse: WeatherCallAPI
     }
     struct ViewModel {
+      let weatherModel: WeatherCallAPI
     }
   }
 }

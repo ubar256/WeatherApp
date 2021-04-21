@@ -17,7 +17,7 @@ class WeatherDailyInteractor: WeatherDailyBusinessLogic, WeatherDailyDataStore {
       guard let self = self else { return }
       switch result {
       case .success(let weather):
-        self.presenter?.presentWeather(response: .init(weather: weather))
+        self.presenter?.presentWeather(response: .init(weatherResponse: weather))
       case .failure(let error):
         self.presenter?.presentError(error)
       }

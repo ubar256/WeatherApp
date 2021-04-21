@@ -49,8 +49,10 @@ class WeatherDailyViewController: UIViewController {
   @IBAction func getWeatherButton(_ sender: UIButton) {
   }
 }
+
 extension WeatherDailyViewController: WeatherDailyDisplayLogic {
   func displayWeather(viewModel: WeatherDaily.FetchWeather.ViewModel) {
+    weatherLabel.text = viewModel.weatherModel.timezone
   }
   func displayError (error: Error) {}
 }

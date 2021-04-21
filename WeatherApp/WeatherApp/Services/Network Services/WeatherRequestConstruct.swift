@@ -10,7 +10,6 @@ struct WeatherRequest: NetworkRequest {
     self.lon = lon
   }
     
- // private let exclude: String = "hourly,daily"
   var bodyParams: [String : Any] = [:]
   var queryParams: [String : String] {
     return [
