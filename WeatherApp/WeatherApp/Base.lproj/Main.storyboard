@@ -16,29 +16,97 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fQ2-Pu-QFe">
-                                <rect key="frame" x="235" y="240" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" systemColor="systemGreenColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Погода в городе" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fQ2-Pu-QFe">
+                                <rect key="frame" x="20" y="151" width="374" height="133"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Долгота" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OVy-tR-IiX">
+                                <rect key="frame" x="260" y="467" width="134" height="27"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="134" id="PBd-ck-LMB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Широта" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IeF-10-HRp">
+                                <rect key="frame" x="260" y="373" width="134" height="45"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введите координату" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="swK-HI-aRQ">
+                                <rect key="frame" x="20" y="373" width="200" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="Ty6-26-uZb"/>
+                                    <constraint firstAttribute="width" constant="200" id="yWy-bD-5jt"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введите координату" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cPI-el-zKr">
+                                <rect key="frame" x="20" y="458" width="200" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="XCZ-LL-GBQ"/>
+                                    <constraint firstAttribute="height" constant="45" id="ikF-Q5-6fc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eZG-n0-8MY">
+                                <rect key="frame" x="123" y="630" width="168" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="AAf-nv-vcn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Получить прогноз">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
+                                </state>
+                                <connections>
+                                    <action selector="getWeatherButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Rcs-xh-ErS"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="OVy-tR-IiX" firstAttribute="leading" relation="lessThanOrEqual" secondItem="cPI-el-zKr" secondAttribute="trailing" constant="52" id="4Hh-3J-Rti"/>
+                            <constraint firstItem="swK-HI-aRQ" firstAttribute="centerY" secondItem="IeF-10-HRp" secondAttribute="centerY" id="6V7-Ix-TI7"/>
+                            <constraint firstItem="OVy-tR-IiX" firstAttribute="centerX" secondItem="IeF-10-HRp" secondAttribute="centerX" id="Crg-4d-erc"/>
+                            <constraint firstItem="IeF-10-HRp" firstAttribute="leading" secondItem="swK-HI-aRQ" secondAttribute="trailing" constant="40" id="E2g-R2-DH7"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="fQ2-Pu-QFe" secondAttribute="bottom" constant="578" id="IDk-Rd-x0e"/>
+                            <constraint firstItem="eZG-n0-8MY" firstAttribute="top" secondItem="OVy-tR-IiX" secondAttribute="bottom" constant="136" id="Jle-Ix-nPG"/>
+                            <constraint firstItem="eZG-n0-8MY" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Kkn-0t-YMM"/>
+                            <constraint firstItem="cPI-el-zKr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="LwP-kP-edQ"/>
+                            <constraint firstItem="fQ2-Pu-QFe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="S9l-x5-qrh"/>
+                            <constraint firstItem="cPI-el-zKr" firstAttribute="top" secondItem="swK-HI-aRQ" secondAttribute="bottom" constant="40" id="YGw-07-XF1"/>
+                            <constraint firstItem="OVy-tR-IiX" firstAttribute="centerY" secondItem="cPI-el-zKr" secondAttribute="centerY" id="bso-9L-UOl"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="OVy-tR-IiX" secondAttribute="trailing" constant="20" id="kar-yI-K4u"/>
+                            <constraint firstItem="swK-HI-aRQ" firstAttribute="top" secondItem="fQ2-Pu-QFe" secondAttribute="bottom" constant="89" id="lyi-bh-7AB"/>
+                            <constraint firstItem="IeF-10-HRp" firstAttribute="top" secondItem="fQ2-Pu-QFe" secondAttribute="bottom" constant="89" id="nXG-Ne-xe8"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="eZG-n0-8MY" secondAttribute="bottom" constant="152" id="pUr-Qm-GAi"/>
+                            <constraint firstItem="swK-HI-aRQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="pyf-Yk-Gnb"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="IeF-10-HRp" secondAttribute="trailing" constant="20" id="sfF-Gk-PLm"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fQ2-Pu-QFe" secondAttribute="trailing" constant="20" id="vdU-mw-cpR"/>
+                            <constraint firstItem="fQ2-Pu-QFe" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="107" id="wzp-H1-Qra"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="latTextField" destination="swK-HI-aRQ" id="cDQ-gX-GNC"/>
+                        <outlet property="lonTextField" destination="cPI-el-zKr" id="Pbq-Jw-Rzp"/>
+                        <outlet property="weatherLabel" destination="fQ2-Pu-QFe" id="nQs-hP-Qzf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-197" y="54"/>
+            <point key="canvasLocation" x="-197.10144927536234" y="53.571428571428569"/>
         </scene>
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -1,10 +1,17 @@
 import UIKit
 
  protocol WeatherDailyDisplayLogic: class {
-   func displaySomething(viewModel: WeatherDaily.Something.ViewModel)
+  func displayWeather(viewModel: WeatherDaily.FetchWeather.ViewModel)
+  func displayError(error: Error)
  }
+class WeatherDailyViewController: UIViewController {
+  // MARK: -TextFields
+  @IBOutlet weak var latTextField: UITextField!
+  @IBOutlet weak var lonTextField: UITextField!
 
- class WeatherDailyViewController: UIViewController, WeatherDailyDisplayLogic {
+  // MARK: -TextLabel
+  @IBOutlet weak var weatherLabel: UILabel!
+
    var interactor: WeatherDailyBusinessLogic?
    var router: (NSObjectProtocol & WeatherDailyRoutingLogic & WeatherDailyDataPassing)?
   
@@ -32,20 +39,18 @@ import UIKit
      }
    }
 
-   // MARK: -View lifecycle
-    override func viewDidLoad() {
+  // MARK: -View lifecycle
+  override func viewDidLoad() {
         super.viewDidLoad()
-        doSomething()
+    setup()
+    interactor?.fetchWeather(request: WeatherDaily.FetchWeather.Request(lon: 60.9, lat: 39.0))
     }
-
-      // MARK: -Do something
-      //@IBOutlet weak var nameTextField: UITextField!
-      func doSomething() {
-        let request = WeatherDaily.Something.Request()
-        interactor?.doSomething(request: request)
-      }
-
-      func displaySomething(viewModel: WeatherDaily.Something.ViewModel) {
-        //nameTextField.text = viewModel.name
-      }
-    }
+  // MARK: -Action button
+  @IBAction func getWeatherButton(_ sender: UIButton) {
+  }
+}
+extension WeatherDailyViewController: WeatherDailyDisplayLogic {
+  func displayWeather(viewModel: WeatherDaily.FetchWeather.ViewModel) {
+  }
+  func displayError (error: Error) {}
+}

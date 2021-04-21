@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		45038F8D262F3EAE00147AE3 /* HttpMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45038F8C262F3EAE00147AE3 /* HttpMethods.swift */; };
+		455DD8E7262E1B5600DD57AA /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455DD8E6262E1B5600DD57AA /* NetworkRequest.swift */; };
+		455DD8EA262E1C0A00DD57AA /* NetworkErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455DD8E9262E1C0A00DD57AA /* NetworkErrors.swift */; };
+		455DD8ED262E1C6F00DD57AA /* Convertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455DD8EC262E1C6F00DD57AA /* Convertible.swift */; };
+		455DD8F0262E1D3300DD57AA /* WeatherRequestConstruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455DD8EF262E1D3300DD57AA /* WeatherRequestConstruct.swift */; };
+		455DD8F3262E1E4200DD57AA /* ApiConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455DD8F2262E1E4200DD57AA /* ApiConstants.swift */; };
+		456F6EB0260E3D220042CA38 /* WeatherAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456F6EAF260E3D220042CA38 /* WeatherAPIModel.swift */; };
+		456F6EB8260E86670042CA38 /* NetworkClientWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456F6EB7260E86670042CA38 /* NetworkClientWorker.swift */; };
 		45C943EA2608EC12008BB125 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C943E92608EC12008BB125 /* AppDelegate.swift */; };
 		45C943F12608EC12008BB125 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45C943EF2608EC12008BB125 /* Main.storyboard */; };
 		45C943F32608EC13008BB125 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45C943F22608EC13008BB125 /* Assets.xcassets */; };
@@ -20,6 +28,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		45038F8C262F3EAE00147AE3 /* HttpMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpMethods.swift; sourceTree = "<group>"; };
+		455DD8E6262E1B5600DD57AA /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
+		455DD8E9262E1C0A00DD57AA /* NetworkErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrors.swift; sourceTree = "<group>"; };
+		455DD8EC262E1C6F00DD57AA /* Convertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Convertible.swift; sourceTree = "<group>"; };
+		455DD8EF262E1D3300DD57AA /* WeatherRequestConstruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherRequestConstruct.swift; sourceTree = "<group>"; };
+		455DD8F2262E1E4200DD57AA /* ApiConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiConstants.swift; sourceTree = "<group>"; };
+		456F6EAF260E3D220042CA38 /* WeatherAPIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAPIModel.swift; sourceTree = "<group>"; };
+		456F6EB7260E86670042CA38 /* NetworkClientWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClientWorker.swift; sourceTree = "<group>"; };
 		45C943E62608EC12008BB125 /* WeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45C943E92608EC12008BB125 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		45C943F02608EC12008BB125 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -45,6 +61,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		455DD8E5262E1ADD00DD57AA /* Network Services */ = {
+			isa = PBXGroup;
+			children = (
+				456F6EAF260E3D220042CA38 /* WeatherAPIModel.swift */,
+				455DD8E6262E1B5600DD57AA /* NetworkRequest.swift */,
+				455DD8E9262E1C0A00DD57AA /* NetworkErrors.swift */,
+				455DD8EC262E1C6F00DD57AA /* Convertible.swift */,
+				455DD8EF262E1D3300DD57AA /* WeatherRequestConstruct.swift */,
+				45038F8C262F3EAE00147AE3 /* HttpMethods.swift */,
+				455DD8F2262E1E4200DD57AA /* ApiConstants.swift */,
+				456F6EB7260E86670042CA38 /* NetworkClientWorker.swift */,
+			);
+			path = "Network Services";
+			sourceTree = "<group>";
+		};
+		456F6EA6260D0B940042CA38 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				455DD8E5262E1ADD00DD57AA /* Network Services */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		45C943DD2608EC12008BB125 = {
 			isa = PBXGroup;
 			children = (
@@ -64,6 +103,7 @@
 		45C943E82608EC12008BB125 /* WeatherApp */ = {
 			isa = PBXGroup;
 			children = (
+				456F6EA6260D0B940042CA38 /* Services */,
 				45C943FE2608F9B0008BB125 /* Scenes */,
 				45C943E92608EC12008BB125 /* AppDelegate.swift */,
 				45C943EF2608EC12008BB125 /* Main.storyboard */,
@@ -169,9 +209,17 @@
 				45C9441E2609F7CE008BB125 /* WeatherDailyViewController.swift in Sources */,
 				45C9441A2609F7CE008BB125 /* WeatherDailyPresenter.swift in Sources */,
 				45C9441C2609F7CE008BB125 /* WeatherDailyRouter.swift in Sources */,
+				455DD8E7262E1B5600DD57AA /* NetworkRequest.swift in Sources */,
+				45038F8D262F3EAE00147AE3 /* HttpMethods.swift in Sources */,
+				455DD8ED262E1C6F00DD57AA /* Convertible.swift in Sources */,
+				456F6EB8260E86670042CA38 /* NetworkClientWorker.swift in Sources */,
 				45C943EA2608EC12008BB125 /* AppDelegate.swift in Sources */,
+				456F6EB0260E3D220042CA38 /* WeatherAPIModel.swift in Sources */,
+				455DD8EA262E1C0A00DD57AA /* NetworkErrors.swift in Sources */,
+				455DD8F3262E1E4200DD57AA /* ApiConstants.swift in Sources */,
 				45C9441D2609F7CE008BB125 /* WeatherDailyModels.swift in Sources */,
 				45C9441F2609F7CE008BB125 /* WeatherDailyInteractor.swift in Sources */,
+				455DD8F0262E1D3300DD57AA /* WeatherRequestConstruct.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
