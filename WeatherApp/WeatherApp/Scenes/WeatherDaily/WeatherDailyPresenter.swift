@@ -2,7 +2,7 @@ import UIKit
 
 protocol WeatherDailyPresentationLogic {
   func presentWeather(response: WeatherDaily.FetchWeather.Response)
-  func presentError(_ error: Error)
+  func presentError(response: Error)
 }
 
 class WeatherDailyPresenter: WeatherDailyPresentationLogic {
@@ -10,14 +10,12 @@ class WeatherDailyPresenter: WeatherDailyPresentationLogic {
   
   // MARK: -Do something
   func presentWeather(response: WeatherDaily.FetchWeather.Response) {
-    let weatherView = response.weatherResponse
-    viewController?.displayWeather(viewModel: WeatherDaily.FetchWeather.ViewModel(weatherModel: weatherView))
-    print(response.weatherResponse.timezone)
+    let viewModel = WeatherDaily.FetchWeather.ViewModel(weatherModel: response.weatherResponse)
+    viewController?.displayWeather(viewModel: viewModel)
   }
   
-  func presentError(_ error: Error) {
-    print(error.localizedDescription)
+  func presentError(response: Error) {
+    viewController?.displayError(error: response)
+    print(response.localizedDescription)
   }
-  
 }
-

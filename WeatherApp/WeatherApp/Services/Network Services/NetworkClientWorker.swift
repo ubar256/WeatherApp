@@ -5,7 +5,6 @@ protocol NetworkClient {
 }
 
 class DefaultNetworkClient: NetworkClient {
-  
   func request<T: Decodable>(convertible: UrlRequestConvertible, completion: @escaping (Result<T, Error>)-> Void) {
     guard let defaultRequest = try? convertible.convertUrlRequest() else { return }
     URLSession.shared.dataTask(with: defaultRequest) { (data, response, error) in
@@ -15,16 +14,15 @@ class DefaultNetworkClient: NetworkClient {
       }
       
       if let data = data {
-        do{
+        do {
           let result = try JSONDecoder().decode(T.self, from: data)
           DispatchQueue.main.async {
             completion(.success(result))
           }
-          
         } catch let jsonError {
           DispatchQueue.main.async {
             completion(.failure(jsonError))
-          } 
+          }
         }
       }
     }.resume()

@@ -1,7 +1,6 @@
 import UIKit
 
-@objc protocol WeatherDailyRoutingLogic {
-}
+@objc protocol WeatherDailyRoutingLogic { }
 
 protocol WeatherDailyDataPassing {
   var dataStore: WeatherDailyDataStore? { get }

@@ -9,17 +9,22 @@ protocol WeatherDailyDataStore {
 
 class WeatherDailyInteractor: WeatherDailyBusinessLogic, WeatherDailyDataStore {
   var presenter: WeatherDailyPresentationLogic!
-  let worker = WeatherDailyWorker()
+  private let worker: WeatherDailyWorker
   
+  init(worker : WeatherDailyWorker) {
+    self.worker = worker
+  }
+
   func fetchWeather(request: WeatherDaily.FetchWeather.Request) {
     let weatherRequest = WeatherRequest(lat: request.lat, lon: request.lon)
-    worker.fetchWeather(convertible: weatherRequest, complition: { [weak self] (result : Result<WeatherCallAPI, Error>) in
+    worker.fetchWeather(convertible: weatherRequest, complition: { [weak self] result  in
       guard let self = self else { return }
       switch result {
       case .success(let weather):
-        self.presenter?.presentWeather(response: .init(weatherResponse: weather))
+        let response = WeatherDaily.FetchWeather.Response.init(weatherResponse: weather)
+        self.presenter?.presentWeather(response: response)
       case .failure(let error):
-        self.presenter?.presentError(error)
+        self.presenter?.presentError(response: error)
       }
     })
   }

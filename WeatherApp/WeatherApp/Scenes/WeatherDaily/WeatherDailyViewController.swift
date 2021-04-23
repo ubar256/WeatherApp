@@ -4,6 +4,7 @@ import UIKit
   func displayWeather(viewModel: WeatherDaily.FetchWeather.ViewModel)
   func displayError(error: Error)
  }
+
 class WeatherDailyViewController: UIViewController {
   // MARK: -TextFields
   @IBOutlet weak var latTextField: UITextField!
@@ -15,20 +16,6 @@ class WeatherDailyViewController: UIViewController {
    var interactor: WeatherDailyBusinessLogic?
    var router: (NSObjectProtocol & WeatherDailyRoutingLogic & WeatherDailyDataPassing)?
   
-   // MARK: -Setup
-   private func setup() {
-     let viewController = self
-     let interactor = WeatherDailyInteractor()
-     let presenter = WeatherDailyPresenter()
-     let router = WeatherDailyRouter()
-     viewController.interactor = interactor
-     viewController.router = router
-     interactor.presenter = presenter
-     presenter.viewController = viewController
-     router.viewController = viewController
-     router.dataStore = interactor
-   }
-
    // MARK: -Routing
    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
      if let scene = segue.identifier {
@@ -42,8 +29,7 @@ class WeatherDailyViewController: UIViewController {
   // MARK: -View lifecycle
   override func viewDidLoad() {
         super.viewDidLoad()
-    setup()
-    interactor?.fetchWeather(request: WeatherDaily.FetchWeather.Request(lon: 60.9, lat: 39.0))
+    interactor?.fetchWeather(request: WeatherDaily.FetchWeather.Request(lon: 37.7, lat: 55.5))
     }
   // MARK: -Action button
   @IBAction func getWeatherButton(_ sender: UIButton) {
@@ -54,5 +40,7 @@ extension WeatherDailyViewController: WeatherDailyDisplayLogic {
   func displayWeather(viewModel: WeatherDaily.FetchWeather.ViewModel) {
     weatherLabel.text = viewModel.weatherModel.timezone
   }
-  func displayError (error: Error) {}
+  func displayError (error: Error) {
+    weatherLabel.text = error.localizedDescription
+  }
 }
