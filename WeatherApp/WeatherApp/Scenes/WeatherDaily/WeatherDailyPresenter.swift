@@ -1,15 +1,21 @@
 import UIKit
 
 protocol WeatherDailyPresentationLogic {
-  func presentSomething(response: WeatherDaily.Something.Response)
+  func presentWeather(response: WeatherDaily.FetchWeather.Response)
+  func presentError(response: Error)
 }
 
 class WeatherDailyPresenter: WeatherDailyPresentationLogic {
   weak var viewController: WeatherDailyDisplayLogic?
   
   // MARK: -Do something
-  func presentSomething(response: WeatherDaily.Something.Response) {
-    let viewModel = WeatherDaily.Something.ViewModel()
-    viewController?.displaySomething(viewModel: viewModel)
+  func presentWeather(response: WeatherDaily.FetchWeather.Response) {
+    let viewModel = WeatherDaily.FetchWeather.ViewModel(weatherModel: response.weatherResponse)
+    viewController?.displayWeather(viewModel: viewModel)
+  }
+  
+  func presentError(response: Error) {
+    viewController?.displayError(error: response)
+    print(response.localizedDescription)
   }
 }

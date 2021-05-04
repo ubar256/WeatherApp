@@ -9,7 +9,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     didFinishLaunchingWithOptions
       launchOptions:[UIApplication.LaunchOptionsKey: Any]?
   ) -> Bool {
-    // Override point for customization after application launch.
+    let storyboard = UIStoryboard(name: "Main", bundle: .main)
+    let viewController = storyboard.instantiateViewController(identifier: "WeatherDailyViewController")
+    guard let weatherDailyViewController = viewController as? WeatherDailyViewController else {
+      return false
+    }
+    WeatherDailyAssembly().setup(viewController: weatherDailyViewController)
+    window?.rootViewController = viewController
+    window?.makeKeyAndVisible()
     return true
   }
 }

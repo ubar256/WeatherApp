@@ -1,24 +1,31 @@
 import UIKit
 
 protocol WeatherDailyBusinessLogic {
-  func doSomething(request: WeatherDaily.Something.Request)
+  func fetchWeather(request: WeatherDaily.FetchWeather.Request)
 }
 
 protocol WeatherDailyDataStore {
-  //var name: String { get set }
 }
 
 class WeatherDailyInteractor: WeatherDailyBusinessLogic, WeatherDailyDataStore {
-  var presenter: WeatherDailyPresentationLogic?
-  var worker: WeatherDailyWorker?
-  //var name: String = ""
+  var presenter: WeatherDailyPresentationLogic!
+  private let worker: WeatherDailyWorker
   
-  // MARK: -Do something
-  func doSomething(request: WeatherDaily.Something.Request) {
-    worker = WeatherDailyWorker()
-    worker?.doSomeWork()
-    
-    let response = WeatherDaily.Something.Response()
-    presenter?.presentSomething(response: response)
+  init(worker : WeatherDailyWorker) {
+    self.worker = worker
+  }
+
+  func fetchWeather(request: WeatherDaily.FetchWeather.Request) {
+    let weatherRequest = WeatherRequest(lat: request.lat, lon: request.lon)
+    worker.fetchWeather(convertible: weatherRequest, complition: { [weak self] result  in
+      guard let self = self else { return }
+      switch result {
+      case .success(let weather):
+        let response = WeatherDaily.FetchWeather.Response.init(weatherResponse: weather)
+        self.presenter?.presentWeather(response: response)
+      case .failure(let error):
+        self.presenter?.presentError(response: error)
+      }
+    })
   }
 }

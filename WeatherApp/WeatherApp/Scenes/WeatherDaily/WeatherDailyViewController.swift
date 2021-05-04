@@ -1,27 +1,21 @@
 import UIKit
 
  protocol WeatherDailyDisplayLogic: class {
-   func displaySomething(viewModel: WeatherDaily.Something.ViewModel)
+  func displayWeather(viewModel: WeatherDaily.FetchWeather.ViewModel)
+  func displayError(error: Error)
  }
 
- class WeatherDailyViewController: UIViewController, WeatherDailyDisplayLogic {
+class WeatherDailyViewController: UIViewController {
+  // MARK: -TextFields
+  @IBOutlet weak var latTextField: UITextField!
+  @IBOutlet weak var lonTextField: UITextField!
+
+  // MARK: -TextLabel
+  @IBOutlet weak var weatherLabel: UILabel!
+
    var interactor: WeatherDailyBusinessLogic?
    var router: (NSObjectProtocol & WeatherDailyRoutingLogic & WeatherDailyDataPassing)?
   
-   // MARK: -Setup
-   private func setup() {
-     let viewController = self
-     let interactor = WeatherDailyInteractor()
-     let presenter = WeatherDailyPresenter()
-     let router = WeatherDailyRouter()
-     viewController.interactor = interactor
-     viewController.router = router
-     interactor.presenter = presenter
-     presenter.viewController = viewController
-     router.viewController = viewController
-     router.dataStore = interactor
-   }
-
    // MARK: -Routing
    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
      if let scene = segue.identifier {
@@ -32,20 +26,21 @@ import UIKit
      }
    }
 
-   // MARK: -View lifecycle
-    override func viewDidLoad() {
+  // MARK: -View lifecycle
+  override func viewDidLoad() {
         super.viewDidLoad()
-        doSomething()
+    interactor?.fetchWeather(request: WeatherDaily.FetchWeather.Request(lon: 37.7, lat: 55.5))
     }
+  // MARK: -Action button
+  @IBAction func getWeatherButton(_ sender: UIButton) {
+  }
+}
 
-      // MARK: -Do something
-      //@IBOutlet weak var nameTextField: UITextField!
-      func doSomething() {
-        let request = WeatherDaily.Something.Request()
-        interactor?.doSomething(request: request)
-      }
-
-      func displaySomething(viewModel: WeatherDaily.Something.ViewModel) {
-        //nameTextField.text = viewModel.name
-      }
-    }
+extension WeatherDailyViewController: WeatherDailyDisplayLogic {
+  func displayWeather(viewModel: WeatherDaily.FetchWeather.ViewModel) {
+    weatherLabel.text = viewModel.weatherModel.timezone
+  }
+  func displayError (error: Error) {
+    weatherLabel.text = error.localizedDescription
+  }
+}
