@@ -37,8 +37,14 @@ extension WeatherCollectionView: UICollectionViewDataSource {
   }
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    guard let cell = dequeueReusableCell(withReuseIdentifier: WeatherCollectionViewCell.reuseId, for: indexPath) as? WeatherCollectionViewCell,
-    let viewModel = viewModel else { return UICollectionViewCell() }
+    guard
+      let cell = dequeueReusableCell(
+        withReuseIdentifier: WeatherCollectionViewCell.reuseId,
+        for: indexPath
+      ) as? WeatherCollectionViewCell,
+    let viewModel = viewModel
+    else { return UICollectionViewCell() }
+    
     let day = viewModel[indexPath.row]
     cell.update(with: day)
     return cell

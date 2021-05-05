@@ -6,7 +6,6 @@ import UIKit
  }
 
 class WeatherDailyViewController: UIViewController {
-  
   private var weatherCollectionView = WeatherCollectionView()
   // MARK: -TextLabel
   @IBOutlet weak var weatherLabel: UILabel!

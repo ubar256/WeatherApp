@@ -12,16 +12,8 @@ class WeatherDailyPresenter: WeatherDailyPresentationLogic {
   func presentWeather(response: WeatherDaily.FetchWeather.Response) {
     let viewModel = WeatherDaily.FetchWeather.ViewModel(weatherModel: response.weatherResponse)
     viewController?.displayWeather(viewModel: viewModel)
-    //WeatherCollectionView.init()
-    //WeatherCollectionView.init().cells = viewModel
-    
   }
-//  
-//  func collectionViewPresent(response: WeatherDaily.FetchWeather.Response) {
-//    let collModel = WeatherDaily.FetchWeather.ViewModel(weatherModel: response.weatherResponse)
-//    WeatherCollectionView.init().cells = collModel
-//  }
-//  
+
   func presentError(response: Error) {
     viewController?.displayError(error: response)
     print(response.localizedDescription)
