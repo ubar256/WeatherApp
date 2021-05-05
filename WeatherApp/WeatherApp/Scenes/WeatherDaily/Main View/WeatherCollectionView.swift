@@ -1,7 +1,7 @@
 import UIKit
 
 class WeatherCollectionView: UICollectionView {
-  var viewModel: [Daily]?
+  private var viewModel: [Daily]?
 
   init() {
     let layout = UICollectionViewFlowLayout()
@@ -21,19 +21,19 @@ class WeatherCollectionView: UICollectionView {
   }
   
   //MARK:- Updating viewModel on viewController
-  func updateViewModel(with viewModel: [Daily]) {
-    self.viewModel = viewModel
+  func updateViewModel(with newModel: [Daily]) {
+    viewModel = newModel
   }
 
   required init?(coder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
-  }
+}
 
 extension WeatherCollectionView: UICollectionViewDataSource {
   
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return viewModel?.count ?? 0
+    viewModel?.count ?? 0
   }
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -45,7 +45,7 @@ extension WeatherCollectionView: UICollectionViewDataSource {
   }
   
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-    return CGSize(width: 180, height: frame.height * 0.8)
+    CGSize(width: 180, height: frame.height * 0.8)
   }
 }
 

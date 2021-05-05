@@ -1,7 +1,6 @@
 import UIKit
 
 class WeatherCollectionViewCell: UICollectionViewCell {
-  
   static let reuseId = "WeatherCollectionViewCell"
   
   var mainImageView: UIImageView = {
@@ -105,7 +104,6 @@ class WeatherCollectionViewCell: UICollectionViewCell {
   
   // MARK:- Updating cell with items
   func update(with model: Daily) {
-    DispatchQueue.main.async { [self] in
       weekLabel.text = converWeek(with: model)
       tempDayLabel.text = String(model.temp.day)
       tempNightLabel.text = String(model.temp.night)
@@ -113,14 +111,12 @@ class WeatherCollectionViewCell: UICollectionViewCell {
       nightLabel.text = "Night:"
       mainImageView.image = createImage(with: model.weather[0])
       descriptionLabel.text = model.weather[0].description
-    }
   }
   
   override init(frame: CGRect) {
     super.init(frame: frame)
     
     backgroundColor = .white
-    
     
     //MARK: -Constraints for image im cells
     addSubview(mainImageView)
@@ -168,5 +164,4 @@ class WeatherCollectionViewCell: UICollectionViewCell {
   required init?(coder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
-  
 }
