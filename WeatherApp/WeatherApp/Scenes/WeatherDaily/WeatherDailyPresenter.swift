@@ -13,7 +13,7 @@ class WeatherDailyPresenter: WeatherDailyPresentationLogic {
     let viewModel = WeatherDaily.FetchWeather.ViewModel(weatherModel: response.weatherResponse)
     viewController?.displayWeather(viewModel: viewModel)
   }
-  
+
   func presentError(response: Error) {
     viewController?.displayError(error: response)
     print(response.localizedDescription)

@@ -1,4 +1,5 @@
 import Foundation
+
 //MARK: -Setup
 class WeatherDailyAssembly {
   

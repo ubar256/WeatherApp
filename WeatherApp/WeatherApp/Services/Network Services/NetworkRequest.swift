@@ -24,10 +24,7 @@ extension NetworkRequest {
                                      value: "\(ApiConstants.apiKey.rawValue)")
     let urlQueryUnits = URLQueryItem(name: "units",
                                      value: "metric")
-    let urlQueryExclude = URLQueryItem(name: "exclude",
-                                       value: "hourly,daily")
-  
-    urlComponents?.queryItems?.append(urlQueryExclude)
+
     urlComponents?.queryItems?.append(urlQueryToken)
     urlComponents?.queryItems?.append(urlQueryUnits)
     guard let components = urlComponents?.url else {
