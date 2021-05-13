@@ -5,10 +5,10 @@ protocol WeatherDailyPresentationLogic {
   func presentError(response: Error)
 }
 
-class WeatherDailyPresenter: WeatherDailyPresentationLogic {
+final class WeatherDailyPresenter: WeatherDailyPresentationLogic {
   weak var viewController: WeatherDailyDisplayLogic?
   
-  // MARK: -Do something
+  // MARK: -Present final viewModel or Error
   func presentWeather(response: WeatherDaily.FetchWeather.Response) {
     let viewModel = WeatherDaily.FetchWeather.ViewModel(weatherModel: response.weatherResponse)
     viewController?.displayWeather(viewModel: viewModel)

@@ -1,6 +1,6 @@
 import UIKit
 
-class WeatherDailyWorker {
+final class WeatherDailyWorker {
   private let networkClient = DefaultNetworkClient()
   
   func fetchWeather(convertible: UrlRequestConvertible, complition: @escaping (Result<WeatherCallAPI,Error>)-> Void) {

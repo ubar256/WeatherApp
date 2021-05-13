@@ -20,7 +20,7 @@ class WeatherCollectionView: UICollectionView {
     showsVerticalScrollIndicator = false
   }
   
-  //MARK:- Updating viewModel on viewController
+  //MARK: -Updating viewModel on viewController
   func updateViewModel(with newModel: [Daily]) {
     viewModel = newModel
   }

@@ -26,26 +26,11 @@
                                 <color key="textColor" name="AccentColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eZG-n0-8MY">
-                                <rect key="frame" x="123" y="762" width="168" height="80"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="AAf-nv-vcn"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Получить прогноз">
-                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
-                                </state>
-                                <connections>
-                                    <action selector="getWeatherButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Rcs-xh-ErS"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="eZG-n0-8MY" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Kkn-0t-YMM"/>
                             <constraint firstItem="fQ2-Pu-QFe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="S9l-x5-qrh"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="eZG-n0-8MY" secondAttribute="bottom" constant="20" id="pUr-Qm-GAi"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fQ2-Pu-QFe" secondAttribute="trailing" constant="20" id="vdU-mw-cpR"/>
                             <constraint firstItem="fQ2-Pu-QFe" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="85" id="wzp-H1-Qra"/>
                         </constraints>

@@ -65,7 +65,7 @@ class WeatherCollectionViewCell: UICollectionViewCell {
     return label
   }()
   
-  //MARK:- Creation of Image with weather id
+  //MARK: -Creation of Image with weather id
   func createImage(with id: Weather)-> UIImage {
     
       let id: Int = id.id
@@ -92,7 +92,7 @@ class WeatherCollectionViewCell: UICollectionViewCell {
       return image!
   }
   
-  //MARK:- Convertion API date to readable day of week
+  //MARK: -Convertion API date to readable day of week
   func converWeek(with date: Daily)-> String {
     let apiDay: Int = date.dt
     let dateFormatter = DateFormatter()
@@ -102,7 +102,7 @@ class WeatherCollectionViewCell: UICollectionViewCell {
     return normalDate
   }
   
-  // MARK:- Updating cell with items
+  // MARK: -Updating cell with items
   func update(with model: Daily) {
       weekLabel.text = converWeek(with: model)
       tempDayLabel.text = String(model.temp.day)
@@ -125,7 +125,7 @@ class WeatherCollectionViewCell: UICollectionViewCell {
     mainImageView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.4).isActive = true
     mainImageView.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.5).isActive = true
     
-    // MARK: - Constraints for label
+    // MARK: -Constraints for label
     addSubview(weekLabel)
     weekLabel.topAnchor.constraint(equalTo: topAnchor, constant: 2).isActive = true
     weekLabel.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
