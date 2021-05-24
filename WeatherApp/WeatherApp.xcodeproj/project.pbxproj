@@ -28,6 +28,7 @@
 		45C9441D2609F7CE008BB125 /* WeatherDailyModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C944172609F7CE008BB125 /* WeatherDailyModels.swift */; };
 		45C9441E2609F7CE008BB125 /* WeatherDailyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C944182609F7CE008BB125 /* WeatherDailyViewController.swift */; };
 		45C9441F2609F7CE008BB125 /* WeatherDailyInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C944192609F7CE008BB125 /* WeatherDailyInteractor.swift */; };
+		45E189FA2642DC39009C1C64 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45E189F92642DC39009C1C64 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		45C944172609F7CE008BB125 /* WeatherDailyModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDailyModels.swift; sourceTree = "<group>"; };
 		45C944182609F7CE008BB125 /* WeatherDailyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDailyViewController.swift; sourceTree = "<group>"; };
 		45C944192609F7CE008BB125 /* WeatherDailyInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDailyInteractor.swift; sourceTree = "<group>"; };
+		45E189F92642DC39009C1C64 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45E189FA2642DC39009C1C64 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,6 +98,7 @@
 			children = (
 				45C943E82608EC12008BB125 /* WeatherApp */,
 				45C943E72608EC12008BB125 /* Products */,
+				45E189F82642DC38009C1C64 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -135,8 +139,8 @@
 				45C944152609F7CE008BB125 /* WeatherDailyWorker.swift */,
 				45C944162609F7CE008BB125 /* WeatherDailyRouter.swift */,
 				45C944172609F7CE008BB125 /* WeatherDailyModels.swift */,
-				45E189F426404A94009C1C64 /* Main View */,
 				45C944192609F7CE008BB125 /* WeatherDailyInteractor.swift */,
+				45E189F426404A94009C1C64 /* Main View */,
 				45038F992633196400147AE3 /* WeatherDailyAssembly.swift */,
 			);
 			path = WeatherDaily;
@@ -150,6 +154,14 @@
 				45038F9F2635745600147AE3 /* WeatherCollectionViewCell.swift */,
 			);
 			path = "Main View";
+			sourceTree = "<group>";
+		};
+		45E189F82642DC38009C1C64 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				45E189F92642DC39009C1C64 /* CoreLocation.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

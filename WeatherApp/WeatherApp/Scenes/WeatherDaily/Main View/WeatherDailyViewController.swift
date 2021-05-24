@@ -35,8 +35,8 @@ class WeatherDailyViewController: UIViewController {
   // MARK: -View lifecycle
   override func viewDidLoad() {
         super.viewDidLoad()
-    interactor?.fetchWeather(request: WeatherDaily.FetchWeather.Request(lon: 37.7, lat: 55.5))
-    
+    interactor?.fetchLocation()
+    interactor?.fetchWeather(coordinate: .init())
     view.addSubview(weatherCollectionView)
     view.addSubview(descriptionLabel)
     
@@ -48,9 +48,6 @@ class WeatherDailyViewController: UIViewController {
     weatherCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
     weatherCollectionView.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 10).isActive = true
     weatherCollectionView.heightAnchor.constraint(equalToConstant: 350).isActive = true
-  }
-  // MARK: -Action button
-  @IBAction func getWeatherButton(_ sender: UIButton) {
   }
 }
 
